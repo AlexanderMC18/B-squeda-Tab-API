@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Respuesta</title>
+    <style>
+        body {
+            background-image: url('../static/images/fondo.avif'); /* URL de tu imagen de fondo */
+            background-size: 100% 100%; /* Ajustar la imagen al tamaño de la pantalla */
+            background-attachment: fixed; /* Fijar la imagen de fondo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    
+        .container-custom {
+            background-color: rgba(255, 255, 255, 0.8); /* Color de fondo del contenedor con transparencia */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+        }
+    
+        h1 {
+            text-align: center;
+            color: #007BFF; /* Color del título */
+        }
+    
+        label {
+            display: block;
+            text-align: center;
+            color: #333; /* Color del texto */
+            font-size: 18px;
+            margin-top: 10px;
+        }
+    
+        .distancia-label {
+            font-weight: bold;
+        }
+    
+        .custom-list {
+            list-style: none; /* Elimina los puntos de la lista */
+            padding: 0;
+        }
+    
+        .custom-list li::before {
+            content: ''; /* No muestra puntos antes de los elementos de la lista */
+            margin-right: 8px; /* Espacio entre el elemento de la lista y el texto */
+        }
+    </style>
+</head>
+<body>
+    <div class="container container-custom text-center">
+        <h1>RESULTADO</h1>
+        <label class="distancia-label">La ruta es:</label>
+        <ul class="custom-list">
+            {% for ciudad in mejor_ruta %}
+                <li>{{ ciudad }}</li>
+            {% endfor %}
+        </ul>
+        <label class="distancia-label">Distancia Total: {{ distancia_total }}</label>
+    </div>
+</body>
+</html>
